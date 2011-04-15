@@ -33,6 +33,7 @@ import time
 API_URL = "http://api.apontador.com.br/v1/"
 
 # SEARCH FOR PLACES
+SEARCH_PLACES_URL = API_URL + "search/places"
 SEARCH_PLACES_BY_POINT_URL = API_URL + "search/places/bypoint"
 SEARCH_PLACES_BY_ADDRESS_URL = API_URL + "search/places/byaddress"
 SEARCH_PLACES_BY_ZIPCODE_URL = API_URL + "search/places/byzipcode"
@@ -155,6 +156,16 @@ class ApontadorAPI(object):
                 params[key] = value
         return params
     
+    def search_places(self, q, category_id=None, sort_by=None, order=None,
+                            rating=None, page=None, limit=None, user_id=None, type=None):
+
+        params = {"q": q}
+
+        self._process_optional_parameters(params, category_id=category_id, sort_by=sort_by, order=order,
+                                          rating=rating, page=page, limit=limit, user_id=user_id, type=type)
+        
+        response = self._call_basic_auth_ws(SEARCH_PLACES_URL, params)
+        return response
    
     def search_places_by_point(self, latitude, longitude, radius_mt=None,
                             term=None, category_id=None, sort_by=None, order=None,

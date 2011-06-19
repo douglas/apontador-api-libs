@@ -13,10 +13,10 @@ print CONSUMER_SECRET
 print OAUTH_TOKEN
 print OAUTH_TOKEN_SECRET
 
-api = ApontadorAPI(consumer_key = CONSUMER_KEY,
-                   consumer_secret = CONSUMER_SECRET,
-                   oauth_token = OAUTH_TOKEN,
-                   oauth_token_secret = OAUTH_TOKEN_SECRET)
+api = ApontadorAPI(consumer_key=CONSUMER_KEY,
+                   consumer_secret=CONSUMER_SECRET,
+                   oauth_token=OAUTH_TOKEN,
+                   oauth_token_secret=OAUTH_TOKEN_SECRET)
 
 
 ######################################################
@@ -108,24 +108,24 @@ print
 
 from random import randint
 
-response = api.create_new_place(name = "casa do tonho %d" % randint(1, 10000),
-                                address_street = "Joao clemente tesseroli",
-                                address_number = "90",
-                                address_district = "JD das americas",
-                                address_city_name = "Curitiba",
-                                address_city_state = "PR",
-                                address_city_country = "BR",
-                                address_complement = "perto do",
-                                point_lat = "",
-                                point_lng = "",
-                                phone_country = "55",
-                                phone_area = "41",
-                                phone_number = "54131154",
-                                category_id = "67",
-                                subcategory_id = "95267",
-                                description = "Local muito legal",
-                                icon_url = "http://maplink.uol.com.br",
-                                other_url = "http://maplink.apontador.com.br",
+response = api.create_new_place(name="casa do tonho %d" % randint(1, 10000),
+                                address_street="Joao clemente tesseroli",
+                                address_number="90",
+                                address_district="JD das americas",
+                                address_city_name="Curitiba",
+                                address_city_state="PR",
+                                address_city_country="BR",
+                                address_complement="perto do",
+                                point_lat="",
+                                point_lng="",
+                                phone_country="55",
+                                phone_area="41",
+                                phone_number="54131154",
+                                category_id="67",
+                                subcategory_id="95267",
+                                description="Local muito legal",
+                                icon_url="http://maplink.uol.com.br",
+                                other_url="http://maplink.apontador.com.br",
                                 type="json")
 
 print response
